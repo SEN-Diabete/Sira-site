@@ -1,1 +1,155 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Le Diabète Simplifié - Séné Diabète</title>
+    <style>
+        :root { 
+            --bg: #FCFAF8; --primary: #7A5C9D; --alert: #D9383E; 
+            --blue: #4A5A9B; --text: #2C2C2C; --accent: #F4A261; --soft: #F0EAE6;
+        }
+        * { box-sizing: border-box; font-family: system-ui, -apple-system, Arial, sans-serif; }
+        body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; text-align: center; }
+        
+        /* HERO SECTION */
+        .hero { padding: 40px 20px 20px; display: flex; flex-direction: column; align-items: center; }
+        .logo { height: 50px; margin-bottom: 20px; }
+        h1 { color: var(--primary); font-size: 2.2rem; margin: 0 0 15px; line-height: 1.2; max-width: 600px; }
+        .subtitle { font-size: 1.2rem; color: #555; max-width: 500px; margin: 0 auto 30px; }
+        
+        .sira-hero { width: 180px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 15px 25px rgba(122, 92, 157, 0.2)); animation: float 4s ease-in-out infinite; }
 
+        /* BOUTON SIRA */
+        .btn-sira {
+            display: inline-block; background: var(--alert); color: white; 
+            text-decoration: none; padding: 18px 40px; border-radius: 50px;
+            font-size: 1.3rem; font-weight: bold; box-shadow: 0 8px 20px rgba(217, 56, 62, 0.3);
+            transition: transform 0.2s; border: 3px solid var(--text); margin-bottom: 15px;
+        }
+        .btn-sira:hover { transform: translateY(-3px); }
+        .sub-cta { font-size: 0.9rem; color: #666; font-style: italic; }
+
+        /* LES OFFRES */
+        .section { padding: 40px 20px; max-width: 900px; margin: auto; }
+        .section h2 { color: var(--blue); font-size: 1.8rem; margin-bottom: 30px; }
+        
+        .offres { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media(min-width: 768px) { .offres { grid-template-columns: 1fr 1fr; } }
+        
+        .offre-card { background: white; padding: 25px; border-radius: 20px; border: 3px solid var(--soft); box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: left; transition: transform 0.2s; display: flex; flex-direction: column; }
+        .offre-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .offre-card.featured { border-color: var(--primary); box-shadow: 0 4px 20px rgba(122, 92, 157, 0.2); }
+        
+        .offre-card h3 { color: var(--primary); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; }
+        .offre-card p { font-size: 0.95rem; color: #555; margin-bottom: 15px; flex-grow: 1; }
+        
+        /* BOUTONS DES OFFRES */
+        .btn-acheter {
+            display: block; width: 100%; background: var(--primary); color: white;
+            text-decoration: none; padding: 15px; border-radius: 10px; font-weight: bold;
+            text-align: center; border: 2px solid var(--text); box-shadow: 2px 2px 0px var(--text);
+            transition: 0.1s; font-size: 1rem;
+        }
+        .btn-acheter:active { transform: translate(2px, 2px); box-shadow: none; }
+        .btn-acheter.gratuit { background: white; color: var(--primary); }
+        
+        /* NOTE WHATSAPP */
+        .note-whatsapp { font-size: 0.85rem; color: #666; margin-top: 12px; text-align: center; font-style: italic; }
+        .note-whatsapp a { color: #25D366; font-weight: bold; text-decoration: none; }
+
+        /* REJOINDRE LE CLUB */
+        .club-box { background: white; padding: 30px; border-radius: 24px; border: 3px solid var(--text); box-shadow: 8px 8px 0px var(--primary); max-width: 500px; margin: 0 auto; text-align: center; }
+        .club-box h3 { color: var(--text); font-size: 1.4rem; margin-top: 0; margin-bottom: 15px; }
+        .club-box p { font-size: 0.95rem; color: #555; margin-bottom: 25px; }
+        
+        /* BOUTON CHAÎNE WHATSAPP */
+        .btn-whatsapp-channel { 
+            display: flex; justify-content: center; align-items: center; gap: 10px;
+            background: #25D366; color: white; text-decoration: none; padding: 15px; 
+            border-radius: 12px; font-size: 1.1rem; font-weight: bold; 
+            border: 2px solid var(--text); box-shadow: 3px 3px 0px var(--text); 
+            transition: 0.1s; 
+        }
+        .btn-whatsapp-channel:active { transform: translate(3px, 3px); box-shadow: none; }
+        .btn-whatsapp-channel svg { width: 24px; height: 24px; fill: currentColor; }
+
+        footer { text-align: center; padding: 30px 20px; color: #888; font-size: 0.85rem; border-top: 1px solid #ddd; margin-top: 40px; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <img src="https://i.postimg.cc/h4xvsywC/Logo-V2.png" alt="Séné Diabète" class="logo">
+        <h1>Le diabète, simplifié pour toi.</h1>
+        <p class="subtitle">Plus de jargon médical. Juste des conseils clairs, des recettes sénégalaises savoureuses et des solutions pour vivre sereinement au quotidien.</p>
+        
+        <img src="sira.png" alt="Sira" class="sira-hero" onerror="this.src='https://placehold.co/200x300/7A5C9D/FFF?text=Sira'">
+        
+        <!-- LIEN VERS SIRA -->
+        <a href="https://sen-diabete.github.io/Sira/" class="btn-sira" target="_blank">🚨 Accéder à Sira (Gratuit)</a>
+        <p class="sub-cta">L'outil d'urgence en cas d'hypo ou d'hyper.</p>
+    </div>
+
+    <section class="section">
+        <h2>Choisis ton compagnon de route</h2>
+        
+        <div class="offres">
+            <!-- OFFRE 1 : RECETTES (2000 F) -->
+            <div class="offre-card">
+                <h3>🍲 Les Recettes Vidéo</h3>
+                <p>10 recettes locales filmées (Thiéboudienne, Mafé allégé, etc.) pour manger sainement sans te priver.</p>
+                <!-- LIEN WAVE 2000 -->
+                <a href="https://pay.wave.com/m/M_sn_Zn2OQdzn9di0/c/sn/?amount=2000" class="btn-acheter" target="_blank">Acheter pour 2 000 FCFA</a>
+                <p class="note-whatsapp">Après paiement, <a href="https://wa.me/221711657172?text=Bonjour%20Sira,%20j'ai%20pay%C3%A9%20les%20recettes%20vid%C3%A9o.%20Voici%20ma%20capture%20d'%C3%A9cran%20:" target="_blank">envoie la capture sur WhatsApp au 71 165 71 72</a></p>
+            </div>
+
+            <!-- OFFRE 2 : PACK AUDIO (1500 F) -->
+            <div class="offre-card">
+                <h3>🎧 Le Pack Audio</h3>
+                <p>5 audios éducatifs pour comprendre le diabète, casser les tabous et savoir quoi faire en cas de doute.</p>
+                <!-- LIEN WAVE 1500 -->
+                <a href="https://pay.wave.com/m/M_sn_Zn2OQdzn9di0/c/sn/?amount=1500" class="btn-acheter" target="_blank">Acheter pour 1 500 FCFA</a>
+                <p class="note-whatsapp">Après paiement, <a href="https://wa.me/221711657172?text=Bonjour%20Sira,%20j'ai%20pay%C3%A9%20le%20pack%20audio.%20Voici%20ma%20capture%20d'%C3%A9cran%20:" target="_blank">envoie la capture sur WhatsApp au 71 165 71 72</a></p>
+            </div>
+
+            <!-- OFFRE 3 : PASS COMPLET (4000 F) - Mise en avant -->
+            <div class="offre-card featured">
+                <h3>💎 Le Pass SEN'Diabète</h3>
+                <p>Le kit complet : Les 10 recettes vidéo + Les 5 audios + Le Guide des Courses au Marché (PDF) + Le Carnet de Suivi.</p>
+                <!-- LIEN WAVE 4000 -->
+                <a href="https://pay.wave.com/m/M_sn_Zn2OQdzn9di0/c/sn/?amount=4000" class="btn-acheter" target="_blank">Obtenir le Pass Complet (4 000 FCFA)</a>
+                <p class="note-whatsapp">Après paiement, <a href="https://wa.me/221711657172?text=Bonjour%20Sira,%20j'ai%20pay%C3%A9%20le%20Pass%20Complet.%20Voici%20ma%20capture%20d'%C3%A9cran%20:" target="_blank">envoie la capture sur WhatsApp au 71 165 71 72</a></p>
+            </div>
+            
+             <!-- OFFRE GRATUITE : CLUB SIRA -->
+             <div class="offre-card">
+                <h3>💌 Le Club de Sira</h3>
+                <p>Reçois gratuitement mes astuces de la semaine et des conseils simples pour prendre soin de toi.</p>
+                <a href="#inscription" class="btn-acheter gratuit">Rejoindre gratuitement</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="inscription">
+        <div class="club-box">
+            <h3>Rejoins le Club de Sira</h3>
+            <p>Reçois gratuitement mes astuces de la semaine, des recettes et des rappels pour prendre soin de toi au quotidien. <br><br>
+            <em style="color: var(--primary); font-size: 0.85rem;">(100% anonyme : je ne verrai jamais ton numéro de téléphone).</em></p>
+            
+            <!-- LIEN VERS LA CHAÎNE WHATSAPP -->
+            <a href="https://whatsapp.com/channel/0029Vb9S0uhA2pL80ZKmsT37" class="btn-whatsapp-channel" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Rejoindre la Chaîne Gratuite
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Séné Diabète</strong> est un outil d'éducation thérapeutique. Il ne remplace pas une consultation médicale.</p>
+        <p>© 2026 Séné Diabète. Fait avec bienveillance à Dakar.</p>
+    </footer>
+
+</body>
+</html>
