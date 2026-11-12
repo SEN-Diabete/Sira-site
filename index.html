@@ -32,24 +32,25 @@
 
         /* LES OFFRES */
         .section { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .section h2 { color: var(--blue); font-size: 1.8rem; margin-bottom: 30px; }
+        .section h2 { color: var(--blue); font-size: 1.8rem; margin-bottom: 10px; }
+        .section .subtitle-offres { color: #666; font-size: 1.1rem; margin-bottom: 30px; }
         
         .offres { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media(min-width: 768px) { .offres { grid-template-columns: 1fr 1fr; } }
         
         .offre-card { background: white; padding: 25px; border-radius: 20px; border: 3px solid var(--soft); box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: left; transition: transform 0.2s; display: flex; flex-direction: column; }
         .offre-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .offre-card.featured { border-color: var(--primary); box-shadow: 0 4px 20px rgba(122, 92, 157, 0.2); }
+        .offre-card.featured { border-color: var(--primary); box-shadow: 0 4px 20px rgba(122, 92, 157, 0.2); transform: scale(1.02); }
         
-        .offre-card h3 { color: var(--primary); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.2rem; }
-        .offre-card p { font-size: 0.95rem; color: #555; margin-bottom: 15px; flex-grow: 1; }
+        .offre-card h3 { color: var(--primary); margin-top: 0; display: flex; align-items: center; gap: 10px; font-size: 1.3rem; }
+        .offre-card p { font-size: 1rem; color: #555; margin-bottom: 15px; flex-grow: 1; }
         
         /* BOUTONS DES OFFRES */
         .btn-acheter {
             display: block; width: 100%; background: var(--primary); color: white;
             text-decoration: none; padding: 15px; border-radius: 10px; font-weight: bold;
             text-align: center; border: 2px solid var(--text); box-shadow: 2px 2px 0px var(--text);
-            transition: 0.1s; font-size: 1rem;
+            transition: 0.1s; font-size: 1.1rem;
         }
         .btn-acheter:active { transform: translate(2px, 2px); box-shadow: none; }
         .btn-acheter.gratuit { background: white; color: var(--primary); }
@@ -94,21 +95,22 @@
 
     <section class="section">
         <h2>Choisis ton compagnon de route</h2>
+        <p class="subtitle-offres">Tu n'as pas besoin de changer toutes tes habitudes. On t'apprend juste à les adapter.</p>
         
         <div class="offres">
             <!-- OFFRE 1 : RECETTES (2000 F) -->
             <div class="offre-card">
-                <h3>🍲 Les Recettes Vidéo</h3>
-                <p>10 recettes locales filmées (Thiéboudienne, Mafé allégé, etc.) pour manger sainement sans te priver.</p>
+                <h3>🍲 Tes 5 Plats Préférés</h3>
+                <p>Découvre comment adapter tes 5 plats préférés (<strong>Thiéboudienne, Mafé, Yassa...</strong>) sans faire exploser ton sucre. Des recettes illustrées et faciles pour toute la famille.</p>
                 <!-- LIEN WAVE 2000 -->
                 <a href="https://pay.wave.com/m/M_sn_Zn2OQdzn9di0/c/sn/?amount=2000" class="btn-acheter" target="_blank">Acheter pour 2 000 FCFA</a>
-                <p class="note-whatsapp">Après paiement, <a href="https://wa.me/221711657172?text=Bonjour%20Sira,%20j'ai%20pay%C3%A9%20les%20recettes%20vid%C3%A9o.%20Voici%20ma%20capture%20d'%C3%A9cran%20:" target="_blank">envoie la capture sur WhatsApp au 71 165 71 72</a></p>
+                <p class="note-whatsapp">Après paiement, <a href="https://wa.me/221711657172?text=Bonjour%20Sira,%20j'ai%20pay%C3%A9%20les%20recettes.%20Voici%20ma%20capture%20d'%C3%A9cran%20:" target="_blank">envoie la capture sur WhatsApp au 71 165 71 72</a></p>
             </div>
 
             <!-- OFFRE 2 : PACK AUDIO (1500 F) -->
             <div class="offre-card">
                 <h3>🎧 Le Pack Audio</h3>
-                <p>5 audios éducatifs pour comprendre le diabète, casser les tabous et savoir quoi faire en cas de doute.</p>
+                <p>Écoute les conseils de Sira. Des audios courts pour comprendre le diabète, gérer tes pieds et casser les tabous, sans stress.</p>
                 <!-- LIEN WAVE 1500 -->
                 <a href="https://pay.wave.com/m/M_sn_Zn2OQdzn9di0/c/sn/?amount=1500" class="btn-acheter" target="_blank">Acheter pour 1 500 FCFA</a>
                 <p class="note-whatsapp">Après paiement, <a href="https://wa.me/221711657172?text=Bonjour%20Sira,%20j'ai%20pay%C3%A9%20le%20pack%20audio.%20Voici%20ma%20capture%20d'%C3%A9cran%20:" target="_blank">envoie la capture sur WhatsApp au 71 165 71 72</a></p>
@@ -117,7 +119,12 @@
             <!-- OFFRE 3 : PASS COMPLET (4000 F) - Mise en avant -->
             <div class="offre-card featured">
                 <h3>💎 Le Pass SEN'Diabète</h3>
-                <p>Le kit complet : Les 10 recettes vidéo + Les 5 audios + Le Guide des Courses au Marché (PDF) + Le Carnet de Suivi.</p>
+                <p>Le kit complet pour vivre sereinement :<br>
+                ✅ Les 5 fiches recettes (Thiéb, Mafé, Yassa...)<br>
+                ✅ Le Guide des Courses au Marché<br>
+                ✅ L'Agenda des repas (Matin & Soir)<br>
+                ✅ Les 5 audios de Sira<br>
+                ✅ Le Carnet de Suivi glycémique</p>
                 <!-- LIEN WAVE 4000 -->
                 <a href="https://pay.wave.com/m/M_sn_Zn2OQdzn9di0/c/sn/?amount=4000" class="btn-acheter" target="_blank">Obtenir le Pass Complet (4 000 FCFA)</a>
                 <p class="note-whatsapp">Après paiement, <a href="https://wa.me/221711657172?text=Bonjour%20Sira,%20j'ai%20pay%C3%A9%20le%20Pass%20Complet.%20Voici%20ma%20capture%20d'%C3%A9cran%20:" target="_blank">envoie la capture sur WhatsApp au 71 165 71 72</a></p>
@@ -126,7 +133,7 @@
              <!-- OFFRE GRATUITE : CLUB SIRA -->
              <div class="offre-card">
                 <h3>💌 Le Club de Sira</h3>
-                <p>Reçois gratuitement mes astuces de la semaine et des conseils simples pour prendre soin de toi.</p>
+                <p>Reçois gratuitement mes astuces de la semaine et des conseils simples pour prendre soin de toi au quotidien.</p>
                 <a href="#inscription" class="btn-acheter gratuit">Rejoindre gratuitement</a>
             </div>
         </div>
